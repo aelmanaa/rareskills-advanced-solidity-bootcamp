@@ -1,17 +1,30 @@
-## Foundry
+# Solidity Contract Examples
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This repository contains a series of Solidity smart contracts designed to address specific functionalities and security concerns in the context of ERC20 tokens and smart contract interactions.
 
-Foundry consists of:
+## Directory Structure
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+```
+src
+├── 1.sanctions
+│   └── SanctionedToken.sol
+├── 2.godmode
+│   └── TokenGodMode.sol
+├── 3.tokensale
+│   └── TokenSale.sol
+└── 4.untrusted-escrow
+    └── UntrustedEscrow.sol
+```
 
-## Documentation
+Each contract in the `src` directory provides a solution to the following challenges:
 
-https://book.getfoundry.sh/
+- [x] **Solidity Contract 1:** `SanctionedToken.sol` implements a fungible token with functionality allowing an admin to ban specified addresses from sending and receiving tokens, addressing the need for enforceable sanctions within the token ecosystem.
+
+- [x] **Solidity Contract 2:** `TokenGodMode.sol` grants a special address the ability to transfer tokens between any addresses, effectively acting as a 'god mode' within the token's operational parameters.
+
+- [x] **Solidity Contract 3:** `TokenSale.sol` tackles the complex challenge of a token sale with a bonding curve, where the price of tokens increases linearly as more are purchased. This contract also considers potential sandwich attacks and implements strategies to mitigate them.
+
+- [x] **Solidity Contract 4:** `UntrustedEscrow.sol` creates a secure escrow mechanism for arbitrary ERC20 tokens, allowing a seller to withdraw tokens after a 3-day holding period. The contract is designed to defend against common security issues and is capable of handling fee-on-transfer tokens and non-standard ERC20 tokens, ensuring broader compatibility and safety.
 
 ## Usage
 
@@ -37,30 +50,4 @@ $ forge fmt
 
 ```shell
 $ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
 ```
