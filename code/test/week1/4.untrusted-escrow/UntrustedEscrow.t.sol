@@ -2,8 +2,8 @@
 pragma solidity ^0.8.22;
 
 import "forge-std/Test.sol";
-import "../../src/4.untrusted-escrow/UntrustedEscrow.sol";
-import "../mocks/MockERC20.sol";
+import "../../../src/week1/4.untrusted-escrow/UntrustedEscrow.sol";
+import "../../mocks/MockERC20.sol";
 
 contract UntrustedEscrowTest is Test {
     error InsufficientBalance(uint256 available);

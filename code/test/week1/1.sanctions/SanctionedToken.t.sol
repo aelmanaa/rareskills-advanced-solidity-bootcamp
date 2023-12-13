@@ -2,7 +2,7 @@
 pragma solidity ^0.8.22;
 
 import "forge-std/Test.sol";
-import "../../src/1.sanctions/SanctionedToken.sol";
+import "../../../src/week1/1.sanctions/SanctionedToken.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract SanctionedTokenTest is Test {
